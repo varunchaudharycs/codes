@@ -1,4 +1,3 @@
-package codes;
 import java.io.*;
 
 public class cf_seatarrangements
