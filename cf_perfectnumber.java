@@ -31,5 +31,3 @@ public class cf_perfectnumber
 		}
 	}
 }
-
-// Test
