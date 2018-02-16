@@ -1,3 +1,4 @@
+// http://codeforces.com/problemset/problem/934/B
 import java.io.*;
 
 class cf_aprosperouslot

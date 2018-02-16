@@ -1,3 +1,4 @@
+// http://codeforces.com/problemset/problem/922/A
 import java.io.*;
 import java.util.*;
 

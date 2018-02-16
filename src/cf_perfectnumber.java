@@ -1,3 +1,4 @@
+// http://codeforces.com/problemset/problem/919/B
 import java.io.*;
 
 public class cf_perfectnumber

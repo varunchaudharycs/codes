@@ -1,3 +1,4 @@
+// http://codeforces.com/problemset/problem/919/A
 import java.io.*;
 
 public class cf_supermarket
