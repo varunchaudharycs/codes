@@ -1,7 +1,7 @@
 import java.io.*;
 import java.math.*;
 
-public class cf_aproperouslot
+public class cf_aprosperouslot
 {
 	public static void main(String args[]) throws IOException
 	{
