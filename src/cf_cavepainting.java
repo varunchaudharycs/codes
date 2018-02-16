@@ -11,7 +11,7 @@ public class cf_cavepainting
 		
 		long n = Long.parseLong(st.nextToken());
 		long k = Long.parseLong(st.nextToken());
-		List<Long> l = new ArrayList<Long>();
+		List<Long> l = new ArrayList<>();
 		long rem; 
 		
 		if(k == 1)

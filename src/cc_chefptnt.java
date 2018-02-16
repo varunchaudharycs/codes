@@ -26,10 +26,7 @@ class cc_chefptnt
 			
 			// CHECK IF POSSIBLE - X (PATENTS/MONTH) * M (MONTHS) >= N (PATENTS)
 			if((x * m) < n)
-			{
 				System.out.println("no");
-				continue;
-			}
 			else
 			{
 				// COUNTING ODD & EVEN MONTH WORKERS
@@ -40,7 +37,7 @@ class cc_chefptnt
 					else
 						odd++;
 				}
-				// CALCULATNG PATENTS THAT CAN BE RESOLVED EACH MONTH
+				// CALCULATING PATENTS THAT CAN BE RESOLVED EACH MONTH
 				for(i = 1; i <= m && n > 0; i++)
 				{
 					// EVEN MONTHS

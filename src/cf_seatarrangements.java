@@ -27,7 +27,7 @@ public class cf_seatarrangements
 				{
 					// ROW CHECK
 					// CHECK IF ALREADY TRAVERSED
-					if(j == 0 || (j != 0 && srr[i].charAt(j - 1) != '.'))
+					if(j == 0 || srr[i].charAt(j - 1) != '.')
 					{
 						// CONSECUTIVE EMPTY SEATS IN ROW - FORMULA = EMPTY SEATS - K + 1
 						for(z = 1; (j + z) < m && srr[i].charAt(j + z) == '.'; z++);
@@ -38,7 +38,7 @@ public class cf_seatarrangements
 					}
 					// COLUMN CHECK
 					// CHECK IF ALREADY TRAVERSED & AVOID IF K = 1
-					if(k > 1 && (i == 0 || (i != 0 && srr[i - 1].charAt(j) != '.')))
+					if(k > 1 && (i == 0 || srr[i - 1].charAt(j) != '.'))
 					{
 						// CONSECUTIVE EMPTY SEATS IN COLUMN - FORMULA = EMPTY SEATS - K + 1
 						for(z = 1; (i + z) < n && srr[i + z].charAt(j) == '.'; z++);
