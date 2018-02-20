@@ -15,42 +15,38 @@ public class cf_acompatiblepair
 		long nrr[] = new long[n];
 		long mrr[] = new long[m];
 		
-		int i = 0;
-		long nmax = Long.MIN_VALUE, mmax = Long.MIN_VALUE, nextmax = Long.MIN_VALUE;
+		int i, j, id = 0;
+		long max = Long.MIN_VALUE;
 		
 		st = new StringTokenizer(buf.readLine());
 		
-		while(st.hasMoreTokens())
-		{
+		for(i = 0; st.hasMoreTokens(); i++)
 			nrr[i] = Long.parseLong(st.nextToken());
 			
-			if(nrr[i] > nextmax)
-			{
-				if(nrr[i] > nmax)
-				{
-					nextmax = nmax;
-					nmax = nrr[i];
-				}
-				else
-					nextmax = nrr[i];
-			}
-				
-			i++;
-		}
-		
 		st = new StringTokenizer(buf.readLine());
-		i = 0;
-		
-		while(st.hasMoreTokens())
-		{
+
+		for(i = 0; st.hasMoreTokens(); i++)
 			mrr[i] = Long.parseLong(st.nextToken());
 			
-			if(mrr[i] > mmax)
-				mmax = mrr[i];
+		for(i = 0; i < n; i++)
+			for(j = 0; j < m; j++)
+				if(Math.max(max, nrr[i] * mrr[j]) != max)
+				{
+					max = nrr[i] * mrr[j];
+					id = i;
+				}
+		
+		max = Long.MIN_VALUE;
+		
+		for(i = 0; i < n; i++)
+		{
+			if (i == id)
+				continue;
 			
-			i++;			
+			for (j = 0; j < m; j++)
+				max = Math.max(max, nrr[i] * mrr[j]);
 		}
 		
-		System.out.println(mmax * nextmax);
+		System.out.println(max);
 	}
 }
