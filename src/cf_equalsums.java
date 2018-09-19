@@ -13,7 +13,6 @@ public class cf_equalsums
         boolean flag = true;
         HashMap<Long, Integer> llhm = new HashMap<>();
         HashMap<Long, Integer> llhm2 = new HashMap<>();
-        
         k = Integer.parseInt(buf.readLine());
         
         /*
