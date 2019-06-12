@@ -1,10 +1,15 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        // iterate over array, pick one element and check if paired up with any rem. ele = target
-        for(int i = 0; i < nums.length; i++)
-            for(int j = i + 1; j < nums.length; j++)
-                if(nums[i] + nums[j] == target)
-                    return new int[] {i, j};
-        throw new IllegalArgumentException("No two sum soln.");
+        // iterate over array putting value in hashmap(for look-back). Find the target pair(forward or backward)
+        Map<Integer, Integer> hm = new HashMap<>();
+        // to store remaining value -> target - current index value
+        int rem=0;
+        for(int i= 0; i < nums.length; i++) {
+            rem = target - nums[i];
+            if(hm.containsKey(rem) && hm.get(rem) != i)
+                return new int[] {hm.get(rem), i};
+            hm.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("No such pair. Incorrect input");
     }
 }
