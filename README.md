@@ -1,6 +1,6 @@
 # codes
 ## Competitive/Algorithmic Coding 
-### Language : Java(main), Python, Scala
+### Language : Java(main)
 *For the love of coding*
 
-Solutions of various contests chiefly on CodeForces and CodeChef.
+- 1st line of each code contains the link to the problem statement
