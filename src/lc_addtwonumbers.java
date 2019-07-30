@@ -9,58 +9,34 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // To store sum & carry
+        int rem = 0;
+        // Dummy node
+        ListNode node = new ListNode(-1);
+        ListNode header = node;
         
-        int sum = 0, rem = 0;
-        ListNode header= null, prev = null, current = null;
-    
-        while(l1 != null || l2 != null) {
+        // Logic - runs until both lists are traversed and forwarded carry is 0
+        while(l1 != null || l2 != null || rem != 0) {
             
-            if(l1 == null && l2 == null) {
-                break;
-            }
-            if(l1 == null) {
-            while(l2 != null) {
-                sum = l2.val + rem;
-                current = new ListNode(sum % 10);  
-                rem = sum / 10;
-                prev.next = current;
-                prev = current;
-                l2 = l2.next;
-            }
-                break;
-            }
-            if(l2 == null) {
-            while(l1 != null) {
-                sum = l1.val + rem;
-                current = new ListNode(sum % 10); 
-                rem = sum / 10;
-                prev.next = current;
-                prev = current;
+            // List 1 has remaining items 
+            if(l1 != null) {
+                rem += l1.val;
                 l1 = l1.next;
             }
-                break;
+            // List 2 has remaining items
+            if(l2 != null) {
+                rem += l2.val;
+                l2 = l2.next;
             }
-            sum = l1.val + l2.val + rem;
-            current = new ListNode(sum % 10); 
-            rem = sum / 10;
-            
-            if(header != null) {
-                prev.next = current;
-            }
-            else {
-                header = current;
-            }
-            
-            prev = current;
-            l1 = l1.next;
-            l2 = l2.next;
+            // Adds List 1 value(if) & List 2 value(if) & forwarded carry(if)
+            // Puts value in new node 
+            // Computes carry
+            // Points to the newly created node
+            node.next = new ListNode(rem % 10);
+            rem /= 10;
+            node = node.next;
         }
         
-        if(rem != 0) {
-            current = new ListNode(rem);
-            prev.next = current;
-        }
-        
-        return header;
+        return header.next;
     }
 }
