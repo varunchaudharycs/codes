@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/two-sum/
-class Solution {
+class lc_twosum {
     public int[] twoSum(int[] nums, int target) {
         // iterate over array putting value in hashmap(for look-back). Find the target pair(forward or backward)
         Map<Integer, Integer> hm = new HashMap<>();
