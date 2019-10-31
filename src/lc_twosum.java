@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 // https://leetcode.com/problems/two-sum/
 class lc_twosum {
     public int[] twoSum(int[] nums, int target) {

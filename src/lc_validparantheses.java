@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 class lc_validparantheses {
     public boolean isValid(String s) {
         // String length
