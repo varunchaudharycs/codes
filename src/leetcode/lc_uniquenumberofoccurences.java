@@ -6,6 +6,8 @@ import java.util.*;
 
 public class lc_uniquenumberofoccurences
 {
+    // store each number and count of occurrences in a hashmap
+    // iterate over hashmap to check if the counts are unique
     public static boolean uniqueOccurrences(int[] arr) {
         HashMap<Integer, Integer> hm = new HashMap<>();
         for(int i = 0; i < arr.length; i++) {
