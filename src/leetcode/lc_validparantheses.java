@@ -2,6 +2,10 @@ package leetcode;
 
 import java.util.Stack;
 
+// TIME - O(n)
+// SPACE - O(n)
+
+
 class lc_validparantheses {
     public boolean isValid(String s) {
         // String length
