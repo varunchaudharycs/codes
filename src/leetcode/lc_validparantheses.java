@@ -11,7 +11,7 @@ class lc_validparantheses {
         // String length
         int len = s.length();
         // Stack implementation - open bracket = push(), closed bracket = pop()
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
         char ch;
         // Traversing string
         for(int i = 0; i < len; i++) {
@@ -20,7 +20,7 @@ class lc_validparantheses {
             // Check if push() or pop() operation
             // push()
             if(ch == '(' || ch == '{' || ch == '[') {
-                stack.push(new Character(ch));
+                stack.push(ch);
             }
             // pop()
             else {
