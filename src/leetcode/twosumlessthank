@@ -1,0 +1,30 @@
+package leetcode;
+
+import java.io.*;
+import java.util.*;
+
+// https://leetcode.com/problems/two-sum-less-than-k/
+
+// TIME - O(n^2)
+// SPACE - O(1)
+
+class {
+
+    public int twoSumLessThanK(int[] A, int K) {
+        
+        int len = A.length;
+        int max = -1;
+        int sum;
+        
+        for(int i = 0; i < len - 1; ++i)
+            for(int j = i + 1; j < len; ++j) {
+                
+                sum = A[i] + A[j];
+                
+                if(sum > max && sum < K)
+                    max = sum;
+            }
+        
+        return max;
+    }
+}
