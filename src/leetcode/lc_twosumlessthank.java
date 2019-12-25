@@ -8,7 +8,7 @@ import java.util.*;
 // TIME - O(n^2)
 // SPACE - O(1)
 
-class {
+class lc_twosumlessthank{
 
     public int twoSumLessThanK(int[] A, int K) {
         
