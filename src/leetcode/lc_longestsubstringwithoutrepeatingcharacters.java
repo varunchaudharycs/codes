@@ -5,7 +5,7 @@ import java.util.*;
 
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
-// TIME - O(n^2)
+// TIME - O(n)
 // SPACE - O(n)
 
 class lc_longestsubstringwithoutrepeatingcharacters {
