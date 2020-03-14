@@ -1,50 +1,37 @@
 import java.io.*;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-// 
 
-public class stack_overflow
-{
-    public static int getRegexMatchCount(Matcher matcher) {
-        
-        int count = 0;
-        while (matcher.find())
-            count++;
-        return count;
-    }
-    
+class stack_overflow {
     public static void main(String args[]) throws IOException {
+        
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
         
-        long arr[], arr2[][], num, t, temp, len, sum = 0, count = 0, diff = Long.MAX_VALUE, rem = 0, ans = 0;
-        int i, j, n, m, k;
-        char ch, crr[];
-        String s = "", srr[];
-        StringTokenizer st;
-        boolean flag = true;
-        HashMap<String, Long> slhm = new HashMap<>();
-        HashMap<Long, String> lshm = new HashMap<>();
-        HashMap<Long, Long> llhm = new HashMap<>();
-        ArrayList<Long> arrlist = new ArrayList<>();
-        ArrayList<String> srrlist = new ArrayList<>();
-        
-        String command = "abc:/b1c\\xy";
-        Pattern COMMAND_PATTERN = Pattern.compile("([a-z]{1})([a-z0-9:]*?)(\\/)([a-z0-9]*?)(\\\\)([a-z]+?)");
-        Matcher matcher = COMMAND_PATTERN.matcher(command);
+        String[] banned = {"m","q","e","l","c","i","z","j","g","t","w","v","h","p","d","b","a","r","x","n"};
+        String paragraph = "j. t? T. z! R, v, F' x! L; l! W. M; S. y? r! n; O. q; I? h; w. t; y; X? y, p. k! k, h, J, r? w! U! V; j' u; R! z. s. T' k. P? M' I' j! y. P, T! e; X. w? M! Y, X; G; d, X? S' F, K? V, r' v, v, D, w, K! S? Q! N. n. V. v. t? t' x! u. j; m; n! F, V' Y! h; c! V, v, X' X' t? n; N' r; x. W' P? W; p' q, S' X, J; R. x; z; z! G, U; m. P; o. P! Y; I, I' l' J? h; Q; s? U, q, x. J, T! o. z, N, L; u, w! u, S. Y! V; S? y' E! O; p' X, w. p' M, h! R; t? K? Y' z? T? w; u. q' R, q, T. R? I. R! t, X, s? u; z. u, Y, n' U; m; p? g' P? y' v, o? K? R. Q? I! c, X, x. r' u! m' y. t. W; x! K? B. v; m, k; k' x; Z! U! p. U? Q, t, u' E' n? S' w. y; W, x? r. p! Y? q, Y. t, Z' V, S. q; W. Z, z? x! k, I. n; x? z; V? s! g, U; E' m! Z? y' x? V! t, F. Z? Y' S! z, Y' T? x? v? o! l; d; G' L. L, Z? q. w' r? U! E, H. C, Q! O? w! s? w' D. R, Y? u. w, N. Z? h. M? o, B, g, Z! t! l, W? z, o? z, q! O? u, N; o' o? V; S! z; q! q. o, t! q! w! Z? Z? w, F? O' N' U' p? r' J' L; S. M; g' V. i, P, v, v, f; W? L, y! i' z; L? w. v, s! P?";
+        paragraph = paragraph.toLowerCase();
+        HashSet<String> hs = new HashSet<>(Arrays.asList(banned));
     
-        while (matcher.find()) {
-            
-            count++;
-            System.out.println(matcher.group(0));
-            System.out.println(matcher.group(1));
-            System.out.println(matcher.group(2));
-            System.out.println(matcher.group(3));
-            System.out.println(matcher.group(4));
-            System.out.println(matcher.group(5));
-            System.out.println(matcher.group(6));
+        String words[] = paragraph.split("[,.;?! ']+");
+        
+        
+        HashMap<String, Integer> hm = new HashMap<>();
+        for(String word : words) {
+        
+            if(!hs.contains(word)) {
+                if(hm.containsKey(word))
+                    hm.put(word, hm.get(word) + 1);
+                else
+                    hm.put(word, 1);
+            }
         }
         
-        System.out.println("MATCH COUNT = " + count);
+        
+        for(Map.Entry e : hm.entrySet()) {
+            System.out.println(e.getKey() + " : " + e.getValue());
+        }
+    
+        String most_freq = Collections.max(hm.entrySet(), Map.Entry.comparingByValue()).getKey();
+    
+        System.out.println(most_freq);
     }
 }
