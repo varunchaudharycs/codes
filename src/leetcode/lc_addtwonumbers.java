@@ -1,5 +1,14 @@
 package leetcode;// https://leetcode.com/problems/add-two-numbers/
 
+import java.io.*;
+import java.util.*;
+
+// https://leetcode.com/problems/add-two-numbers/
+
+// TIME - O(n)
+// SPACE - O(n)
+
+
 class lc_addtwonumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // To store sum & carry
