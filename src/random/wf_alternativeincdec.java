@@ -19,24 +19,26 @@ class wf_alternativeincdec {
         // check
         for(int i = 0; i < arr.length - 1; i++) {
             cmp = i + 1;
+            // skip index cut from array
             if(i == idx)
                 continue;
-            if(i + 1 == idx) {
-                if(cmp == arr.length - 1) return -1;
-                else
+            // skip comparison with immediate neighbour if cut
+            if(i + 1 == idx)
+                if(cmp == arr.length - 1) 
+                    break;
+                else 
                     cmp++;
-            }
             // increase
             if(inc) {
                 if(arr[cmp] <= arr[i])
-                    return i;
+                    return i; // failed pattern
                 else
                     inc = false;
             }
             // decrease
             else { 
                 if(arr[cmp] >= arr[i])
-                    return i;
+                    return i; // failed pattern
                 else
                     inc = true;
             }
@@ -44,22 +46,18 @@ class wf_alternativeincdec {
         return -1; // all good
     }
     public int solution(int[] A) {
-        // write your code in Java SE 8
-        int idx = helper(A, -1);
+        int idx = helper(A, -1); // index failing pattern(inc or dec)
         if(idx == -1)
             return 0;
         else {
             int ways = 0;
-            int len = A.length;
             // cut i from A[]
-            for(int i = idx - 1; i < len; i++) {
-                int[] arr = new int[len - 1];
-                idx = helper(A, i);
-                if(idx == -1)
+            for(int i = idx - 1; i < A.length; i++) {
+                if(helper(A, i) == -1) // one way found
                     ways++;
             }
             if(ways == 0)
-                return -1;
+                return -1; // no solution
             else
                 return ways;
         }
