@@ -18,6 +18,26 @@ class lc_climbingstairs {
         return dp[n];
     }
     
+    // Additionally -> FIBONACCI FORMULA && BINET'S MATRIX MULTIPLICATION
+    
+    // FIBONACCI
+//     public int climbStairs(int n) {
+        
+//         if(n == 0) return 0;
+//         if(n == 1) return 1;
+//         if(n == 2) return 2;
+        
+//         int first = 1, second = 2, fibo = 0;
+        
+//         for(int i = 3; i < n + 1; i++) {
+            
+//             fibo = first + second;
+//             first = second;
+//             second = fibo;
+//         }
+//         return fibo;
+//     }
+    
     
     // MEMOIZATION - store #ways in int[]
 //     public int climbStairs(int n) {
