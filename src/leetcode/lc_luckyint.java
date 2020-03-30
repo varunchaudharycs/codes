@@ -1,6 +1,6 @@
 // https://leetcode.com/contest/weekly-contest-182/problems/find-lucky-integer-in-an-array/
 // TIME - O(n)
-
+package leetcode;
 import java.io.*;
 import java.util.*;
 

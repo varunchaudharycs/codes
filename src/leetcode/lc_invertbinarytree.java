@@ -10,6 +10,9 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+package leetcode;
+import java.io.*;
+import java.util.*;
 class lc_invertbinarytree {
     public TreeNode invertTree(TreeNode root) {
         

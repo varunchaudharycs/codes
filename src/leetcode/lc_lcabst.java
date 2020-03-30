@@ -9,6 +9,9 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
+package leetcode;
+import java.io.*;
+import java.util.*;
 class lc_lcabst {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         

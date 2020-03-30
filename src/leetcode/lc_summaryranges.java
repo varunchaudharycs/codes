@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/summary-ranges/
 // NO DUPLICATES, SORTED
 // Time - O(n)
-
+package leetcode;
 import java.io.*;
 import java.util.*;
 

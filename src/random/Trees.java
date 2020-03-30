@@ -235,6 +235,24 @@ class Node
         
         return 1 + Math.max(height_left, height_right);
     }
+
+    public boolean inorder_iterative(Node root) {
+	
+	Stack<test> nodes = new Stack<>();
+	Node curr = root;
+
+	while(!nodes.isEmpty() || curr != null) {
+		
+		while(curr != null) {
+			nodes.add(curr);
+			curr = curr.left;
+		}
+		curr = nodes.pop();
+		System.out.println("Inorder(iterative) - " + curr.val);
+		curr = curr.right;
+	}
+	return true;
+    }
     
 }
 

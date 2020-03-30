@@ -1,6 +1,8 @@
 // https://leetcode.com/problems/climbing-stairs/
 // TIME - O(n)
-
+package leetcode;
+import java.io.*;
+import java.util.*;
 class lc_climbingstairs {
     
     // DP - dp[i] = dp[i−1] + dp[i−2]
