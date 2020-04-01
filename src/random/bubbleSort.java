@@ -1,6 +1,6 @@
 // BUUBLE SORT
 // TIME - O(n^2) // BEST O(n), SPACE - O(1)
-
+package random;
 import java.io.*;
 import java.util.*;
 
