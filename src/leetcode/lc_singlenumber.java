@@ -18,12 +18,9 @@ public class lc_singlenumber {
     // ONE-PASS ()
     public int singleNumber(int[] nums) {
 
-        int unique = 0;
-
-        for(int num : nums) 
-            unique ^= num;
-
-        return unique;
+        for(int i = 1; i < nums.length; i++) nums[i] ^= nums[i-1];
+        
+        return nums[nums.length-1];
     }
 
     // // HASHMAP
