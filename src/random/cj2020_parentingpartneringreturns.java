@@ -1,5 +1,5 @@
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/000000000020bdf9
-// TIME - O(n^2) cuz of Selection Sort
+// TIME - O(n logn) cuz of Sorting
 package random;
 import java.io.*;
 import java.util.*;
