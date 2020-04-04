@@ -19,17 +19,18 @@ public class lc_movezeroes {
         
         int len = nums.length;
         int shifts = 0;
+
         for(int i = 0; i < len; i++) {
 
             if(nums[i] != 0) {
-                nums[i - shifts] = nums[i]; // SHIFT NUM BY #0 TILL NOW
+                nums[i - shifts] = nums[i]; // SWAP NUM with 0
+                if(i != i - shifts) nums[i] = 0;
             }
             else
                 shifts++; // 0 INCREASES SHIFT
         }
-        for(int i = len - shifts; i < len; i++) nums[i] = 0; // FILL TRAILING ZEROES
 
-        //for(Integer v : nums) System.out.println(v);
+        for(Integer v : nums) System.out.println(v);
     }
 
 
