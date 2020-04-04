@@ -1,5 +1,5 @@
 // https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/528/week-1/3285/
-// TIME - O(n^2)
+// TIME - O(n)
 package leetcode;
 import java.io.*;
 import java.util.*;
@@ -22,26 +22,36 @@ public class lc_maximumsubarray {
         //     System.out.println("Case #" + test + ": " + new String(ans));
         // }
     }
-    // BRUTE
+    // DP - value[i] = MAX(num[i], sum[i-1] + num[i])
     public int maxSubArray(int[] nums) {
 
         int len = nums.length;
-        int maxSum = Integer.MIN_VALUE;
-
-        for(int i = 0; i < len; i++) {
-
-            ArrayList<Integer> sums = new ArrayList<>();
-            int sum = 0;
-            for(int j = i; j < len; j++) {
-
-                sum += nums[j];
-                sums.add(sum);
-            }
-            if(Collections.max(sums) > maxSum) {
-                maxSum = Collections.max(sums);
-            }
+        for(int i = 1; i < len; i++) {
+            nums[i] = Math.max(nums[i-1] + nums[i], nums[i]);
         }
 
-        return maxSum;
+        return Arrays.stream(nums).max().getAsInt();
     }
+    // BRUTE
+//     public int maxSubArray(int[] nums) {
+
+//         int len = nums.length;
+//         int maxSum = Integer.MIN_VALUE;
+
+//         for(int i = 0; i < len; i++) {
+
+//             ArrayList<Integer> sums = new ArrayList<>();
+//             int sum = 0;
+//             for(int j = i; j < len; j++) {
+
+//                 sum += nums[j];
+//                 sums.add(sum);
+//             }
+//             if(Collections.max(sums) > maxSum) {
+//                 maxSum = Collections.max(sums);
+//             }
+//         }
+
+//         return maxSum;
+//     }
 }
