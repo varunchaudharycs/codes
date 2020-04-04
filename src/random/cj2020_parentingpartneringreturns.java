@@ -16,51 +16,41 @@ public class cj2020_parentingpartneringreturns {
 
             int endTimeC = 0, endTimeJ = 0;
             int n = Integer.parseInt(buf.readLine());
-            int[] pos = new int[n];
-            List<Integer> start = new LinkedList<>();
-            List<Integer> end = new LinkedList<>();
+            // ACTIVITY -> (#position, START time, END time)
+            ArrayList<ArrayList<Integer>> activities = new ArrayList<ArrayList<Integer>>();
             for(int i = 0; i < n; i++) { 
                 StringTokenizer st = new StringTokenizer(buf.readLine());
-                start.add(Integer.parseInt(st.nextToken()));
-                end.add(Integer.parseInt(st.nextToken()));
-                pos[i] = i;
+                ArrayList<Integer> list = new ArrayList<Integer>(); // Not init with inner class {{}}
+                // error: local variables referenced from an inner class must be final or effectively final (cause: var i)
+                list.add(i);
+                list.add(Integer.parseInt(st.nextToken()));
+                list.add(Integer.parseInt(st.nextToken()));
+                activities.add(list);
             }
 
-            // sort END times based on START times
-            for(int i = 0; i < n; i++) {
-                int min = start.get(i);
-                int minIdx = i;
-                for(int j = i + 1; j < n; j++)
-                    if(start.get(j) < start.get(minIdx)) {
-                        minIdx = j;
-                        min = start.get(j);
-                    }
-                start.set(minIdx, start.get(i));
-                start.set(i, min);
-                min = end.get(minIdx);
-                end.set(minIdx, end.get(i));
-                end.set(i, min);
-                min = pos[minIdx];
-                pos[minIdx] = pos[i];
-                pos[i] = min;
-            }
+            // Sort based on START time
+            Collections.sort(activities, new Comparator<ArrayList<Integer>>() {
+                public int compare(ArrayList<Integer> a, ArrayList<Integer> b) {
+                    return a.get(1) - b.get(1);
+                }
+            });
 
             char[] ans = new char[n];
             boolean busy = false;
             for(int i = 0; i < n; i++) {
 
-                if(start.get(i) < endTimeC && start.get(i) < endTimeJ) { // BOTH BUSY
+                if(activities.get(i).get(1) < endTimeC && activities.get(i).get(1) < endTimeJ) { // BOTH BUSY
                     busy = true;
                     break;
                 }
                 else {
-                    if(start.get(i) >= endTimeC) {
-                        ans[pos[i]] = 'C';
-                        endTimeC = end.get(i);
+                    if(activities.get(i).get(1) >= endTimeC) {
+                        ans[activities.get(i).get(0)] = 'C';
+                        endTimeC = activities.get(i).get(2);
                     }
                     else {
-                        ans[pos[i]] = 'J';
-                        endTimeJ = end.get(i);
+                        ans[activities.get(i).get(0)] = 'J';
+                        endTimeJ = activities.get(i).get(2);
                     }
                 }
             }
