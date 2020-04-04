@@ -1,6 +1,7 @@
 // https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209a9f
 // TIME - O(n)
 // Note - String repeat in JAVA 11
+package random;
 import java.io.*;
 import java.util.*;
 
