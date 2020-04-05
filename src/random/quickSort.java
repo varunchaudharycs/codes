@@ -1,9 +1,9 @@
 // QUICK SORT
 // TIME - O(n logn) || O(n^2)
-
+package random;
 import java.io.*;
 import java.util.*;
-package random;
+
 public class quickSort {
 
     public static void main(String[] args)throws IOException {
@@ -12,8 +12,8 @@ public class quickSort {
 
         Solution obj = new Solution();
 
-        int[] arr = {3,2,1,6,7};
-        
+        int[] arr = {10, 16, 8, 12, 15, 6, 3, 9, 5};
+
         obj.quickSort(arr, 0, arr.length - 1);
 
         for(Integer i : arr) System.out.println(i);
@@ -25,10 +25,12 @@ public class quickSort {
         int pivot = arr[left]; // DEFAULT PIVOT = LEFT MOST
         int pivotIdx = left;
 
-        while(i <= j) { // FIND ACTUAL POS
+        while(i < j) { 
 
-            if(arr[i] <= pivot) i++;
-            if(arr[j] >= pivot) j--;
+            while(arr[i] <= pivot && i < right) i++; // FIND LEFT ELE > PIVOT
+            while(arr[j] >= pivot && j > left) j--; // FIND RIGHT ELE < PIVOT
+
+            if(i < j) arr[i] = arr[i] ^ arr[j] ^ (arr[j] = arr[i]); // SWAP TO KEEP LEFT LOWER & RIGHT HIGHER
         }
 
         arr[j] = arr[j] ^ arr[pivotIdx] ^ (arr[pivotIdx] = arr[j]); // UPDATE IN ORIGINAL ARRAY (j is ACTUAL PIVOT POS)
