@@ -19,7 +19,7 @@ public class mergeSort {
         for(Integer i : arr) System.out.println(i);
     }
     // MERGE TWO SORTED ARRAYS INTO ONE SORTED ARRAY
-    public void merge(int[] arr, int left, int mid, int right) {
+    public void merge(int[] arr, int left, int mid, int right) { // Can prevent auxillary array by shifting numbers instead BUT then O(n^2) !!
 
         int[] merged = new int[right - left + 1];
         int i = left, j = mid + 1, k = 0;
