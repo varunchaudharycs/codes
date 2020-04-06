@@ -23,14 +23,14 @@ public class lc_groupanagrams {
     }
     // (key : value) => (Sorted String : List of strings)
     public List<List<String>> groupAnagrams(String[] strs) {
-        HashMap<String, List<String>> anagrams = new HashMap<>();
+                HashMap<String, List<String>> anagrams = new HashMap<>();
         List<List<String>> ans = new ArrayList<>();
 
         for(String str : strs) {
 
             char[] strArr = str.toCharArray();
             Arrays.sort(strArr);
-            String newStr = new String(strArr); // SORT STRING
+            String newStr = String.valueOf(strArr); // SORT STRING
 
            if(anagrams.containsKey(newStr)) // INSERT IN MAP
                 anagrams.get(newStr).add(str);
@@ -38,10 +38,9 @@ public class lc_groupanagrams {
                 anagrams.put(newStr, new ArrayList<String>(Arrays.asList(str)));
         }
 
-        for(Map.Entry<String, List<String>> entry : anagrams.entrySet()) { // GENERATE OUTPUT FORMAT
+        for(Map.Entry<String, List<String>> entry : anagrams.entrySet()) // GENERATE OUTPUT FORMAT
             ans.add(entry.getValue());
-        }
 
-        return ans;   
+        return ans;        
     }
 }
