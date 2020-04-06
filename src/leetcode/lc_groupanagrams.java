@@ -32,11 +32,8 @@ public class lc_groupanagrams {
             Arrays.sort(strArr);
             String newStr = new String(strArr); // SORT STRING
 
-           if(anagrams.containsKey(newStr)) {// INSERT IN MAP
-                List<String> l = anagrams.get(newStr);
-                l.add(str);
-                anagrams.put(newStr, l);
-            }
+           if(anagrams.containsKey(newStr)) // INSERT IN MAP
+                anagrams.get(newStr).add(str);
             else
                 anagrams.put(newStr, new ArrayList<String>(Arrays.asList(str)));
         }
@@ -45,6 +42,6 @@ public class lc_groupanagrams {
             ans.add(entry.getValue());
         }
 
-        return ans;     
+        return ans;   
     }
 }
