@@ -21,26 +21,49 @@ public class lc_groupanagrams {
                 System.out.print("word - " + s + ",");
         }
     }
-    // (key : value) => (Sorted String : List of strings)
+    // (key : value) => (alphabet#Count : List of strings)
     public List<List<String>> groupAnagrams(String[] strs) {
-                HashMap<String, List<String>> anagrams = new HashMap<>();
-        List<List<String>> ans = new ArrayList<>();
+        
+        HashMap<String, List<String>> anagrams = new HashMap<>();
+        int[] alphabets = new int[26];
 
         for(String str : strs) {
 
-            char[] strArr = str.toCharArray();
-            Arrays.sort(strArr);
-            String newStr = String.valueOf(strArr); // SORT STRING
+            Arrays.fill(alphabets, 0); // RESET ALPHABET COUNTS
+            String newStr = "";
 
-           if(anagrams.containsKey(newStr)) // INSERT IN MAP
-                anagrams.get(newStr).add(str);
-            else
-                anagrams.put(newStr, new ArrayList<String>(Arrays.asList(str)));
+            for(Character c : str.toCharArray()) alphabets[c - 'a']++; // COUNT ALPHABETS
+
+            for(int i = 0; i < 26; i++) // PREPARE CODE
+                if(alphabets[i] > 0)
+                    newStr += Character.toString((char)'a' + i) + alphabets[i];
+
+            if(!anagrams.containsKey(newStr)) // INSERT IN MAP
+                 anagrams.put(newStr, new ArrayList<String>());
         }
-
-        for(Map.Entry<String, List<String>> entry : anagrams.entrySet()) // GENERATE OUTPUT FORMAT
-            ans.add(entry.getValue());
-
-        return ans;        
+        return new ArrayList<>(anagrams.values()); // GENERATE OUTPUT FORMAT              
     }
+    // (key : value) => (Sorted String : List of strings)
+//     public List<List<String>> groupAnagrams(String[] strs) {
+//        HashMap<String, List<String>> anagrams = new HashMap<>();
+//         int[] alphabets = new int[26];
+
+//         for(String str : strs) {
+
+//             Arrays.fill(alphabets, 0); // RESET ALPHABET COUNTS
+//             String newStr = "";
+
+//             for(Character c : str.toCharArray()) alphabets[c - 'a']++; // COUNT ALPHABETS
+
+//             for(int i = 0; i < 26; i++) // PREPARE CODE
+//                 if(alphabets[i] > 0)
+//                     newStr += Character.toString((char)'a' + i) + alphabets[i];
+
+//             if(!anagrams.containsKey(newStr)) // INSERT IN MAP
+//                 anagrams.put(newStr, new ArrayList<String>());
+
+//             anagrams.get(newStr).add(str);
+//         }
+//         return new ArrayList<>(anagrams.values()); // GENERATE OUTPUT FORMAT                 
+//     }
 }
