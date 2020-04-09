@@ -12,7 +12,7 @@ public class lc_backspacestringcompare {
 
         Solution obj = new Solution();
 
-        String S = "a##c", T = "#a#c"; // S = "a#c", T = "b"
+        String S = "y#fo##f", T = "y#f#o##f"; // S = "a#c", T = "b"
 
         System.out.println(obj.backspaceCompare(S, T));
 
@@ -28,13 +28,13 @@ public class lc_backspacestringcompare {
             if(i < S.length())
                 if(S.charAt(i) == '#' && a.length() > 0) 
                     a.setLength(a.length() - 1); // DELETE CHAR
-                else
+                else if(S.charAt(i) != '#')
                     a.append(S.charAt(i)); // ADD CHAR
 
             if(j < T.length())
                 if(T.charAt(j) == '#' && b.length() > 0) 
                     b.setLength(b.length() - 1); // DELETE CHAR
-                else
+                else if(T.charAt(j) != '#')
                     b.append(T.charAt(j)); // ADD CHAR
         }
 
