@@ -17,27 +17,34 @@ public class lc_backspacestringcompare {
         System.out.println(obj.backspaceCompare(S, T));
 
     }
-    // Collect string along the way w/ backspaces
+    // USE 2 STACKS - char "#" represents POP operation, else PUSH
     public boolean backspaceCompare(String S, String T) {
         
-        StringBuilder a = new StringBuilder("");
-        StringBuilder b = new StringBuilder("");
+        Stack<Character> a = new Stack<>();
+        Stack<Character> b = new Stack<>();
 
         for(int i = 0, j = 0; i < S.length() || j < T.length(); i++, j++) {
 
             if(i < S.length())
-                if(S.charAt(i) == '#' && a.length() > 0) 
-                    a.setLength(a.length() - 1); // DELETE CHAR
+                if(S.charAt(i) == '#' && !a.isEmpty()) 
+                    a.pop(); // DELETE CHAR
                 else if(S.charAt(i) != '#')
-                    a.append(S.charAt(i)); // ADD CHAR
+                    a.push(S.charAt(i)); // ADD CHAR
 
             if(j < T.length())
-                if(T.charAt(j) == '#' && b.length() > 0) 
-                    b.setLength(b.length() - 1); // DELETE CHAR
+                if(T.charAt(j) == '#' && !b.isEmpty()) 
+                    b.pop(); // DELETE CHAR
                 else if(T.charAt(j) != '#')
-                    b.append(T.charAt(j)); // ADD CHAR
+                    b.push(T.charAt(j)); // ADD CHAR
         }
 
-        return a.toString().equals(b.toString()); // MATCH STRINGS
+       if(a.size() != b.size()) return false; // UNEQUAL SIZE
+        
+        while(!a.isEmpty()) { // MATCH ELEMENTS OF THE TWO STACKS
+            
+            if(a.pop() != b.pop()) return false; // MISMATCH
+        }
+
+        return true; // EQUAL STACKS
     }
 }
