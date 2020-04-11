@@ -1,5 +1,5 @@
 // https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/529/week-2/3291/
-// TIME - O(n)
+// TIME - O(n), SPACE - O(1) || O(n + m)
 package leetcode;
 import java.io.*;
 import java.util.*;
@@ -17,6 +17,52 @@ public class lc_backspacestringcompare {
         System.out.println(obj.backspaceCompare(S, T));
 
     }
+    // SPACE - O(1)
+    // END -> START, CONSIDER # AS JUMPS
+    public boolean backspaceCompare(String S, String T) {
+        
+        boolean Sready = false, Tready = false;
+        int Sjumps = 0, Tjumps = 0;
+        int i = S.length() - 1, j = T.length() - 1;
+        while((i >= 0 || j >= 0)
+                && !(Sready && j < 0) //. CHECK IF ONE POINTER IS NOT STUCK
+                && !(Tready && i < 0)) { // i - Pointer for S, j - Pointer for T
+
+            if(!Sready && i >= 0) // CHECK WHETHER TO JUMP OR INCLUDE
+                if(S.charAt(i) == '#') 
+                    Sjumps++;
+                else
+                    if(Sjumps > 0)
+                        Sjumps--;
+                    else
+                        Sready = true;
+
+            if(!Tready && j >= 0) // CHECK WHETHER TO JUMP OR INCLUDE
+                if(T.charAt(j) == '#') 
+                    Tjumps++;
+                else
+                    if(Tjumps > 0)
+                        Tjumps--;
+                    else
+                        Tready = true;
+
+            if(Tready && Sready) // COMPARE
+                if(S.charAt(i) != T.charAt(j))
+                    return false;
+                else {
+                    i--; j--; 
+                    Sready = false; Tready = false;
+                    continue;
+                }
+            if(!Sready) i--;
+            if(!Tready) j--;
+        }
+        if(!Sready && !Tready) // NOTHING LEFT TO MATCH
+            return true;
+        else
+            return false;
+    }
+    // SPACE - O(n + m)
     // USE 2 STACKS - char "#" represents POP operation, else PUSH
     public boolean backspaceCompare(String S, String T) {
         
