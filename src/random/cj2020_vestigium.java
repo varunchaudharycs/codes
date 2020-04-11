@@ -4,7 +4,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class cj2020_vestigium {
 
     public static void main(String[] args)throws IOException {
 
