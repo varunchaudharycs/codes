@@ -13,20 +13,19 @@ class lc_minstack {
         minst = new Stack<Integer>();
         st = new Stack<Integer>();
     }
-    
+
     public void push(int x) {
         
         st.push(x);
         if(minst.isEmpty()) minst.push(x);
-        else minst.push(Math.min(x, minst.peek())); // NEW MIN ?
+        else if(x <= minst.peek()) minst.push(x); // NEW MIN OR DUPLICATE OF CURRENT MIN?
     }
     
     public void pop() {
 
         if(st.isEmpty()) return;
-
-        st.pop(); 
-        minst.pop();
+        int popped = st.pop();
+        if(popped == minst.peek()) minst.pop(); // MIN ELE POPPED
     }
     
     public int top() {
