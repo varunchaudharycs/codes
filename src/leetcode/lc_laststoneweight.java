@@ -1,5 +1,5 @@
 // https://leetcode.com/explore/featured/card/30-day-leetcoding-chllenge/529/week-2/3297/
-// TIME - O(n * nlogn) cuz SORTING
+// TIME - O(nlogn) cuz SORTING
 package leetcode;
 import java.io.*;
 import java.util.*;
@@ -16,24 +16,18 @@ class lc_laststoneweight {
 
     public int lastStoneWeight(int[] stones) {
 
-        List<Integer> l = new ArrayList<>(stones.length);
-        for(int stone : stones) l.add(stone);
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder()); // REVERSE ORDER FOR PRIORITY
+        for(int stone : stones) pq.add(stone);
 
-        while(l.size() > 1) {
+        while(pq.size() >= 2) {
 
-            Collections.sort(l, Collections.reverseOrder());
+            int max1 = pq.poll();
+            int max2 = pq.poll();
 
-            if(l.get(0) > l.get(1)) {
-                l.set(0, l.get(0) - l.get(1));
-                l.remove(l.get(1));
-            }
-            else {
-                l.remove(l.get(0));
-                l.remove(l.get(0));
-            }
+            if(max1 > max2) pq.add(max1 - max2); // IF MAX > 2nd MAX
         }
 
-        return (l.size() == 0) ? 0 : l.get(0);        
+        return (pq.size() == 0) ? 0 : pq.poll();          
     }
 }
 
