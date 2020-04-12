@@ -13,7 +13,7 @@ class lc_laststoneweight {
         int ans = obj.lastStoneWeight(arr);
         System.out.println(ans);
     }
-
+    // PRIORITY QUEUE w/ REVERSE ORDERING as PRIORITY
     public int lastStoneWeight(int[] stones) {
 
         PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder()); // REVERSE ORDER FOR PRIORITY
