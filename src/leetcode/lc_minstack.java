@@ -24,8 +24,8 @@ class lc_minstack {
     public void pop() {
 
         if(st.isEmpty()) return;
-        int popped = st.pop();
-        if(popped == minst.peek()) minst.pop(); // MIN ELE POPPED
+        if(st.pop() == (int)minst.peek()) minst.pop(); // MIN ELE POPPED
+        // NOTE - (int) TYPECAST to compare INTEGER OBJ
     }
     
     public int top() {
