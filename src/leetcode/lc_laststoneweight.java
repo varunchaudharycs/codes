@@ -1,5 +1,5 @@
 // https://leetcode.com/explore/featured/card/30-day-leetcoding-chllenge/529/week-2/3297/
-// TIME - O(n), SPACE - O(max) || O(n logn), SPACE - O(n)
+// TIME - O(max), SPACE - O(max) || O(n logn), SPACE - O(n)
 package leetcode;
 import java.io.*;
 import java.util.*;
@@ -37,7 +37,6 @@ class lc_laststoneweight {
                         buckets[competitor]--;
                         buckets[pointer] = 0;
                         if(pointer > competitor) buckets[pointer - competitor]++; // MAX1 - MAX2
-                        pointer = competitor;
                         break;
                     }
                 }
