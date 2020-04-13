@@ -50,7 +50,7 @@ class lc_contiguousarray {
 
 
 
-    // BRUTE- Trim search if better answer available
+    // BRUTE(TLE !!)- Trim search if better answer available
     // public int findMaxLength(int[] nums) {
 
     //     int len = nums.length, maxL = 0;
