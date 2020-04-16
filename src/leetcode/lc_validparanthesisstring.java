@@ -12,9 +12,9 @@ class lc_validparanthesisstring {
 
         while(true) {
             // STRING VARIABLE
-             String s = buf.readLine();
-             s = s.replaceAll("\"","");
-
+            String s = buf.readLine();
+            s = s.replaceAll("\"","");
+            // "()" T , "(*)" T , "(*))" T , "*(()" F
             lc_validparanthesisstring obj = new lc_validparanthesisstring();
             boolean ans = obj.checkValidString(s);
             System.out.println(ans);
