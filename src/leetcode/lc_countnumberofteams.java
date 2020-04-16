@@ -31,24 +31,18 @@ class lc_countnumberofteams {
         int len = rating.length;
         int count = 0;
         
-        for(int i = 0; i < len; i++) {
-            int low = 0, high = 0;
-            for(int j = 0; j < i; j++) {
-                low += (rating[j] < rating[i]) ? 1 : 0; 
+        for(int i = 1; i < len - 1; i++) {
+            // NUMBER OF ELEMENTS LOWER/HIGHER THAN CURRENT(i) ON LEFT/RIGHT
+            int leftLow = 0, leftHigh = 0, rightLow = 0, rightHigh = 0; 
+            for(int j = 0; j < i; j++) { // LEFT-SIDE COUNTING
+                leftLow += (rating[j] < rating[i]) ? 1 : 0;
+                leftHigh += (rating[j] > rating[i]) ? 1 : 0; 
             }
-            for(int j = i + 1; j < len; j++) {
-                high += (rating[j] > rating[i]) ? 1 : 0; 
+            for(int j = i + 1; j < len; j++) { // RIGHT-SIDE COUNTING
+                rightLow += (rating[j] < rating[i]) ? 1 : 0;
+                rightHigh += (rating[j] > rating[i]) ? 1 : 0; 
             }
-            count += (low * high);
-
-            low = 0; high = 0;
-            for(int j = i + 1; j < len; j++) {
-                low += (rating[j] < rating[i]) ? 1 : 0; 
-            }
-            for(int j = 0; j < i; j++) {
-                high += (rating[j] > rating[i]) ? 1 : 0; 
-            }
-            count += (low * high);
+            count += (leftLow * rightHigh) + (leftHigh * rightLow);
         }
         return count;
     }
