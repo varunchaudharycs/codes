@@ -21,9 +21,8 @@ public class ks2020_biketour {
             int[] checkpoints = new int[n];
             for(int i = 0; i < n; i++) checkpoints[i] = Integer.parseInt(srr[i]);
 
-            for(int i = 0; i < n; i++)
-                if(i != 0 && i != n - 1 
-                   && checkpoints[i] > checkpoints[i-1] && checkpoints[i] > checkpoints[i+1]) {
+            for(int i = 1; i < n - 1; i++)
+                if(checkpoints[i] > checkpoints[i-1] && checkpoints[i] > checkpoints[i+1]) {
                     ans++;
                     i++; // SKIP NEXT: won't SATISFY CONDITION
                 }
