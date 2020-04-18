@@ -23,8 +23,10 @@ public class ks2020_biketour {
 
             for(int i = 0; i < n; i++)
                 if(i != 0 && i != n - 1 
-                   && checkpoints[i] > checkpoints[i-1] && checkpoints[i] > checkpoints[i+1])
+                   && checkpoints[i] > checkpoints[i-1] && checkpoints[i] > checkpoints[i+1]) {
                     ans++;
+                    i++; // SKIP NEXT: won't SATISFY CONDITION
+                }
            
             System.out.println("Case #" + test + ": " + ans);
         }
