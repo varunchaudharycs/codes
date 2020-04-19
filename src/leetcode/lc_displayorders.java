@@ -5,6 +5,7 @@ import java.io.*;
 import java.util.*;
 
 class lc_displayorders {
+    // NESTED MAP -> (tableNo -> (Dish -> Qty))
     public List<List<String>> displayTable(List<List<String>> orders) {
         int len = orders.size();
 
@@ -27,16 +28,11 @@ class lc_displayorders {
             hm.put(dish, hm.getOrDefault(dish, 0)+1);
             tableOrders.put(tableNo, hm);
         }
-        Collections.sort(dishes);
-        Collections.sort(tables);
+        Collections.sort(dishes); // ORDERED
+        Collections.sort(tables); // ORDERED
         dishes.add(0, "Table");
         summary.add(dishes);
-        // for(Map.Entry<String, HashMap<String, Integer>> entry : tableOrders.entrySet()) {
-        //     System.out.println("Table - " + entry.getKey());
-        //     HashMap<String, Integer> hm = entry.getValue();
-        //     for(Map.Entry<String, Integer> entryDish : hm.entrySet()) System.out.println("Dish - " + entry.getKey() + ", Value - " + entry.getValue());
-        // }
-
+     
         for(Integer tableNum : tables) {
             String table = tableNum.toString();
             List<String> tableOrder = new ArrayList<>(){{
