@@ -1,7 +1,7 @@
 // https://codeforces.com/contest/1358/problem/A
 // TIME - O(1)
 
-package leetcode;
+package codeforces;
 import java.io.*;
 import java.util.*;
 
