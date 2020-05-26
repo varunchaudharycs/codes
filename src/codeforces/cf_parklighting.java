@@ -12,7 +12,8 @@ public class cf_parklighting {
 		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
 		int t = Integer.parseInt(buf.readLine());
-
+		// IF ANY ONE DIM IS EVEN = EvenDim/2(border light) * Other dim
+		// IF BOTH ODD = Make one dim EVEN. Solve like above. Then solve separately for the left out row/col
 		while((t--) > 0) {
 
 			StringTokenizer st = new StringTokenizer(buf.readLine());
