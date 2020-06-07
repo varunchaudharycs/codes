@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/shuffle-the-array/
 // TIME - O(n)
 
-//package leetcode;
+package leetcode;
 import java.io.*;
 import java.util.*;
 
