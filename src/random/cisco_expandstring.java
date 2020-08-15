@@ -1,13 +1,24 @@
 import java.io.*;
 import java.util.*;
 
-class expandstring {
+class cisco_expandstring {
 
 	public static void main(String[] args)throws IOException {
 
 		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-		String s = buf.readLine();
+		while(true) {
+
+			System.out.println("Enter string");
+			String s = buf.readLine();
+
+			System.out.println(expand(s));
+		}
+	}
+
+	// logic - maintain stack = answer at index 'i'. collect number and prev substring within "(" & ")". put local ans back on stack
+	public static String expand(String s) {
+
 		int len = s.length();
 
 		StringBuilder sb = new StringBuilder();
@@ -25,7 +36,6 @@ class expandstring {
 				StringBuilder part = new StringBuilder();
 				while(chars.peek() != '{') part.append(chars.pop());
 				chars.pop(); // remove "{"
-				System.out.println(part);
 				int multiply = Integer.parseInt(part.reverse().toString());
 
 				part.setLength(0);
@@ -44,6 +54,14 @@ class expandstring {
 
 		while(!chars.isEmpty()) sb.append(chars.pop());
 
-		System.out.println(sb.reverse().toString());
+		return sb.reverse().toString();
 	}
 }
+
+// I/O -
+
+// (a){2}
+// aa
+
+// (ab(c){2}d){3}
+// abccdabccdabccd
