@@ -35,10 +35,10 @@ public class lc_longestpalindromicsubstring {
 
 		int currLength = end - start - 1;
 
-		if(currLength > this.longestLength) {
+		if(currLength > longestLength) {
 
-			this.longestLength = currLength;
-			this.longestSubstring = s.substring(start + 1, end);
+			longestLength = currLength;
+			longestSubstring = s.substring(start + 1, end);
 		}
 	}
 
