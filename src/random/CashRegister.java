@@ -2,11 +2,11 @@ import java.io.*;
 import java.util.*;
 import java.math.BigDecimal;
 
-class blackrock_coinchange {
+class CashRegister {
 
 	public static void main(String[] args)throws IOException {
 
-		readInput("50;50.4");
+		readInput("50;97.75");
 	}
 
 	public static void readInput(String line) {
@@ -33,17 +33,17 @@ class blackrock_coinchange {
         TWO_PENCE(0.02d),
         ONE_PENCE(0.01d);
 
-        private final Double value;
+        private final double value;
         private final String currency;
 
-        Denomination(Double value) {
+        Denomination(double value) {
 
 	        this.value = value;
 	        this.currency = this.name().replace("_", " ");
    		}
 
-	    public BigDecimal getValue() {
-	        return BigDecimal.valueOf(this.value);
+	    public double getValue() {
+	        return this.value;
 	    }
 
 	    @Override
@@ -58,23 +58,19 @@ class blackrock_coinchange {
 		else if(cash == purchasePrice) { System.out.println("Zero"); }
 		else {
 
-			BigDecimal cashD = BigDecimal.valueOf(cash);
-			BigDecimal purchasePriceD = BigDecimal.valueOf(purchasePrice);
-			BigDecimal cashback = cashD.subtract(purchasePriceD);
+			BigDecimal cashback = BigDecimal.valueOf(cash - purchasePrice);
 			StringBuilder change = new StringBuilder();
 
 			for(Denomination d : Denomination.values()) {
 
-				int count = 0;
+				BigDecimal val = BigDecimal.valueOf(d.getValue());
+				String name = d.toString();
 
-				while(cashback.compareTo(d.getValue()) >= 0) {
+				while(cashback.compareTo(val) >= 0) {
 
-					count++;
-					cashback = cashback.subtract(d.getValue());
+					cashback = cashback.subtract(val);
+					change.append(name).append(", ");
 				}
-
-				if(count == 2) { change.append("TWO ").append(d.toString()).append(", "); }
-				else if(count == 1) { change.append(d.toString()).append(", "); }
 			}
 
 			change.setLength(change.length() - 2);
