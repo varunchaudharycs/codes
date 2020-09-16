@@ -8,10 +8,15 @@ class KMP {
 	public static void main(String[] args)throws IOException {
 
 
-		String pattern = "AABA";
-		String text = "AABAACAADAABAABA";
+		String pattern = "aa";
+		String text = "aaadsaaa"; // 4
+
+		// String pattern = "abc";
+		// String text = "abcdabc"; // 2
 
 		int[] lps = findLPS(pattern);
+
+		//for(int i : lps) System.out.println(i);
 
 		List<Integer> matchingIndices = findPattern(text, pattern, lps);
 
@@ -53,19 +58,32 @@ class KMP {
 
 		List<Integer> matchingIndices = new LinkedList<>();
 
-		for(int i = 0, j = -1; i < totalChars; ++i) {
+		int i = 0, j = 0; 
 
-			if(textChars[i] == patternChars[j+1]) { // MATCH
+        while (i < totalChars) {
 
-				if(j + 1 == len - 1) { // PATTERN FOUND
+            if (patternChars[j] == textChars[i]) {
 
-					matchingIndices.add(i - len + 1); 
-					j = lps[j + 1];
-				}
-				else { j++; }
-			}
-			else { j = Math.min(j, lps[j]); } // NO MATCH
-		}
+                j++; 
+                i++; 
+            } 
+
+            if (j == len) { 
+
+                matchingIndices.add(i - j); 
+                j = lps[j - 1];
+            }
+            // mismatch after j matches 
+            else if (i < totalChars && patternChars[j] != textChars[i]) { 
+
+                // Do not match lps[0..lps[j-1]] characters, 
+                // they will match anyway 
+                if (j != 0) 
+                    j = lps[j - 1]; 
+                else
+                    i = i + 1; 
+            } 
+        } 
 
 		return matchingIndices;
 	}
