@@ -168,10 +168,13 @@ class PortfolioBenchmark {
 
 		for(List<String> change : changes) {
 
-			for(String s : change)
-			System.out.print(s);
+			StringBuilder sb = new StringBuilder();
 
-			System.out.println();
+			for(String s : change)
+			sb.append(s).append(",");
+
+			sb.setLength(sb.length() - 1);
+			System.out.println(sb);
 		}
 	}
 }
