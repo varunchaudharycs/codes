@@ -20,10 +20,10 @@ public class FavoriteGenres {
    			put("Jazz", List.of("song8", "song9"));
 		}};
 
-		findGenres(userSongs, songGenres);
+		new FavoriteGenres().findGenres(userSongs, songGenres);
 	}
 
-	public static void findGenres(Map<String, List<String>> userSongs, Map<String, List<String>> genreSongs) {
+	public void findGenres(Map<String, List<String>> userSongs, Map<String, List<String>> genreSongs) {
 
 		Map<String, List<String>> result = new HashMap<>();
 
