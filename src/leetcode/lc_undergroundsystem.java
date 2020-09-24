@@ -11,7 +11,7 @@ class lc_undergroundsystem {
     private HashMap<String, Double> stations_avgTime; // st1-st2 => avgTime
     private HashMap<String, Integer> stations_visits; // st1-st2 => #visits
 
-    public UndergroundSystem() {
+    public lc_undergroundsystem() {
         id_checkinStation = new HashMap<Integer, String>();
         id_checkinTime = new HashMap<Integer, Integer>();
         stations_avgTime = new HashMap<String, Double>();

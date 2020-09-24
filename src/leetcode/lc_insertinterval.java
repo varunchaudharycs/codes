@@ -6,45 +6,46 @@ import java.io.*;
 import java.util.*;
 
 public class lc_template {
-	
+
 	// put intrvals in order
 	// 1. non-overlapping on left as it is
 	// 2. consolidated start & end for all overlapping intervals
 	// 3. non-overlapping on right as it is
-	 public int[][] insert(int[][] intervals, int[] newInterval) {
-        
-        int len = intervals.length;
-	    
-	    List<List<Integer>> merged = new ArrayList<>();
-	    
-	    int mergedStart = newInterval[0];
-	    int mergedEnd = newInterval[1];
+	public int[][] insert(int[][] intervals, int[] newInterval) {
 
-	    int i = 0;
-	    
-	    for(; i < len && intervals[i][1] < mergedStart; ++i) // non overlapping intervals on left
-	    	merged.add(Arrays.asList(intervals[i][0], intervals[i][1]));
-        
-	    for(; i < len && intervals[i][0] <= mergedEnd; ++i) {
+		int len = intervals.length;
 
-	    	mergedStart = Math.min(mergedStart, intervals[i][0]);
-	    	mergedEnd = Math.max(mergedEnd, intervals[i][1]);
-	    }
-        
-	    merged.add(Arrays.asList(mergedStart, mergedEnd));
+		List<List<Integer>> merged = new ArrayList<>();
 
-	    for(; i < len; ++i)
-	    	merged.add(Arrays.asList(intervals[i][0], intervals[i][1]));
+		int mergedStart = newInterval[0];
+		int mergedEnd = newInterval[1];
 
-	    // convert list to array
-	    int[][] ans = new int[merged.size()][2];
-	    for(i = 0; i < merged.size(); ++i) {
-	        ans[i][0] = merged.get(i).get(0);
-	        ans[i][1] = merged.get(i).get(1);
-	    }
-	    
-	    return ans;
-    }
+		int i = 0;
+
+		for (; i < len && intervals[i][1] < mergedStart; ++i) // non overlapping intervals on left
+			merged.add(Arrays.asList(intervals[i][0], intervals[i][1]));
+
+		for (; i < len && intervals[i][0] <= mergedEnd; ++i) {
+
+			mergedStart = Math.min(mergedStart, intervals[i][0]);
+			mergedEnd = Math.max(mergedEnd, intervals[i][1]);
+		}
+
+		merged.add(Arrays.asList(mergedStart, mergedEnd));
+
+		for (; i < len; ++i)
+			merged.add(Arrays.asList(intervals[i][0], intervals[i][1]));
+
+		// convert list to array
+		int[][] ans = new int[merged.size()][2];
+		for (i = 0; i < merged.size(); ++i) {
+			ans[i][0] = merged.get(i).get(0);
+			ans[i][1] = merged.get(i).get(1);
+		}
+
+		return ans;
+	}
+}
 
 
 

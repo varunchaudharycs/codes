@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 // TIME - O(log n)
 
-//package leetcode;
+package leetcode;
 import java.io.*;
 import java.util.*;
 

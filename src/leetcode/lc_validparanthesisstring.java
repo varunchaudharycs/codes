@@ -23,12 +23,12 @@ class lc_validparanthesisstring {
     // TRACK MAX & MIN OPEN "("
     // COMPENSATE FOR "*" being "(" OR ")" OR NULL
     public boolean checkValidString(String s) {
-        
+
         int minOpen = 0, maxOpen = 0;
-        
+
         for(char c : s.toCharArray()) {
-            
-            if(c == '(') { 
+
+            if(c == '(') {
                 minOpen++;
                 maxOpen++;
             }
@@ -40,9 +40,9 @@ class lc_validparanthesisstring {
                 minOpen--;
                 maxOpen++;
             }
-            
+
             if(maxOpen < 0) return false; // INVALID, ")" w/o A MATCH
-            
+
             minOpen = Math.max(minOpen, 0); // COMPENSATE FOR "*" BEING NULL
         }
         return (minOpen == 0) ? true : false;
@@ -80,6 +80,6 @@ class lc_validparanthesisstring {
 //             if(openIdx.isEmpty()) return true;
 //             else return false; // INVALID
 //         }
-    }
+//    }
 }
 
