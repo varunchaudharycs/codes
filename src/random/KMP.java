@@ -7,84 +7,77 @@ class KMP {
 
 	public static void main(String[] args)throws IOException {
 
-
-		String pattern = "aa";
-		String text = "aaadsaaa"; // 4
-
 		// String pattern = "abc";
 		// String text = "abcdabc"; // 2
 
+		String text = "AAAAABAAABA";
+		String pattern = "AAAA";
+
 		int[] lps = findLPS(pattern);
 
-		//for(int i : lps) System.out.println(i);
+		//for(int i : lps) { System.out.println(i); }
 
-		List<Integer> matchingIndices = findPattern(text, pattern, lps);
-
-		System.out.println(matchingIndices);
-		System.out.println(matchingIndices.size());
+		findPattern(text, pattern, lps);
 	}
 
 	public static int[] findLPS(String pattern) {
 
-		int len = pattern.length();
-		int[] lps = new int[len];
-		char[] chars = pattern.toCharArray();
+		int n = pattern.length();
+		int[] lps = new int[n];
+		
+		if(n == 0) { return lps; }
 
-		for(int j = 0, i = 1; i < len;) {
+		lps[0] = 0;
+		int len = 0;
 
-			if(chars[j] == chars[i]) {
+		char[] ch = pattern.toCharArray();
 
-				lps[i] = j + 1;
-				++j;
-				++i;
+		for(int i = 1; i < n;) {
+
+			if(ch[i] == ch[len]) {
+
+				len++;
+				lps[i] = len;
+				i++;
 			}
 			else {
 
-				if(j != 0) { j = lps[j-1]; }
-				else { ++i; }
+				if(len == 0) { i++; }
+				else {
+
+					len = lps[len-1];
+				}
 			}
 		}
 
 		return lps;
 	}
 
-	public static List<Integer> findPattern(String text, String pattern, int[] lps) {
+	public static void findPattern(String text, String pattern, int[] lps) {
 
-		int totalChars = text.length();
-		int len = lps.length;
+		int m = text.length();
+		char[] T = text.toCharArray();
 
-		char[] textChars = text.toCharArray();
-		char[] patternChars = pattern.toCharArray();
+		int n = pattern.length();
+		char[] P = pattern.toCharArray();
+		int len = 0;
 
-		List<Integer> matchingIndices = new LinkedList<>();
+		for(int i = 0; i < m;) {
 
-		int i = 0, j = 0; 
+			if(T[i] == P[len]) {
+				i++;
+				len++;
 
-        while (i < totalChars) {
+				if(len == n) {
 
-            if (patternChars[j] == textChars[i]) {
-
-                j++; 
-                i++; 
-            } 
-
-            if (j == len) { 
-
-                matchingIndices.add(i - j); 
-                j = lps[j - 1];
-            }
-            // mismatch after j matches 
-            else if (i < totalChars && patternChars[j] != textChars[i]) { 
-
-                // Do not match lps[0..lps[j-1]] characters, 
-                // they will match anyway 
-                if (j != 0) 
-                    j = lps[j - 1]; 
-                else
-                    i = i + 1; 
-            } 
-        } 
-
-		return matchingIndices;
+					System.out.println("Found at index - " + (i - n));
+					len = lps[len-1];
+				}
+			}
+			else {
+				if(len == 0) { i++; }
+				else { len = lps[len-1]; }
+			}
+		}
 	}
 }
