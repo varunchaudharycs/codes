@@ -10,7 +10,7 @@ public class lc_countingelements {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_countingelements obj = new lc_countingelements();
 
         int[] arr = {1,1,2,2};
         

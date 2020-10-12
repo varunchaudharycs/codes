@@ -10,7 +10,7 @@ public class lc_movezeroes {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_movezeroes obj = new lc_movezeroes();
         int[] arr = {0,1,0,3,12};
         obj.moveZeroes(arr);
     }

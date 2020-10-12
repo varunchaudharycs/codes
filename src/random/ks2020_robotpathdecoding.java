@@ -20,7 +20,7 @@ public class ks2020_robotpathdecoding {
 
             int row = 1, col = 1;
             long down = 0, right = 0;
-            Stack<Integer> times = new Stack<>(){{
+            Stack<Integer> times = new Stack<Integer>(){{
                 push(1);
             }};
             for(int i = 0; i < len; i++) {

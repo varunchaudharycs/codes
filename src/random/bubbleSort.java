@@ -10,7 +10,7 @@ public class bubbleSort {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        bubbleSort obj = new bubbleSort();
         int[] nums = {5,4,3,2,1};
         obj.bubbleSort(nums);
     }

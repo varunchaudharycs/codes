@@ -1,4 +1,4 @@
-// https://leetcode.com/discuss/interview-question/831199/drw-oa-2020
+package random;// https://leetcode.com/discuss/interview-question/831199/drw-oa-2020
 // TIME - O(n logn)
 
 //package leetcode;
@@ -29,9 +29,9 @@ public class drw_breakchain {
 
 		List<List<Integer>> link_idx = new ArrayList<>();
 
-		for(int i = 0; i < len; ++i) link_idx.add(new ArrayList<Integer>(List.of(links[i], i)));
+		for(int i = 0; i < len; ++i) link_idx.add(new ArrayList<Integer>(Arrays.asList(links[i], i)));
 
-		Collections.sort(link_idx, new Comparator<>() { // sort based on link strength, increasing order
+		Collections.sort(link_idx, new Comparator<List<Integer>>() { // sort based on link strength, increasing order
 
 			public int compare(List<Integer> a, List<Integer> b) {
 

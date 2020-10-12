@@ -1,4 +1,4 @@
-// https://leetcode.com/contest/weekly-contest-205/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
+package leetcode;// https://leetcode.com/contest/weekly-contest-205/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
 // TIME - O(n)
 
 //package leetcode;

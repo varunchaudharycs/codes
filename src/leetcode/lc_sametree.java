@@ -14,17 +14,17 @@ import java.util.*;
  */
 class lc_sametree {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        
+
         TreeNode p_curr, q_curr;
         boolean same = true;
         Queue<TreeNode> p_nodes = new LinkedList<>();
         Queue<TreeNode> q_nodes = new LinkedList<>();
         p_nodes.add(p);
         q_nodes.add(q);
-        while(!p_nodes.isEmpty() 
+        while(!p_nodes.isEmpty()
               && !q_nodes.isEmpty()
               && same) {
-            
+
             p_curr = p_nodes.poll();
             q_curr = q_nodes.poll();
             // any one is NULL - NOT SAME
@@ -47,7 +47,7 @@ class lc_sametree {
                     q_nodes.add(q_curr.right);
                 }
             }
-            
+
         }
         // both queues empty & same = true => SAME TREE
         if(p_nodes.isEmpty() && q_nodes.isEmpty())

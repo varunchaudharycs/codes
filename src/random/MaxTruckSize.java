@@ -1,3 +1,5 @@
+package random;
+
 import java.io.*;
 import java.util.*;
 
@@ -14,7 +16,7 @@ class MaxTruckSize {
 		System.out.println(findMaxSize(num, boxes, unitSize, unitsPerBox, truckSize));
 	}
 
-	public static int findMaxSize(int num, int[] boxes, int unitSize, int[] unitsPerBox, int truckSize) {
+	public static long findMaxSize(int num, int[] boxes, int unitSize, int[] unitsPerBox, int truckSize) {
 
 		List<int[]> boxesUnits = new ArrayList<>();
 		
@@ -44,5 +46,6 @@ class MaxTruckSize {
 		}
 		
 		System.out.println(maxUnits);
+		return maxUnits;
 	}
 }

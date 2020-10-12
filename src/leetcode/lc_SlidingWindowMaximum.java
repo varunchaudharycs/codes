@@ -1,3 +1,8 @@
+package leetcode;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 // https://leetcode.com/problems/sliding-window-maximum/
 class lc_SlidingWindowMaximum {
     

@@ -19,9 +19,9 @@ public class lc_middleoflinkedlist {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_middleoflinkedlist obj = new lc_middleoflinkedlist();
 
-        System.out.println(obj.middleNode(arr));
+        System.out.println(obj.middleNode(new ListNode()));
 
         // for(List<String> l : list) {
         //     for(String s : l)

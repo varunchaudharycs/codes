@@ -4,13 +4,13 @@ package leetcode;
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class lc_happynumber {
 
     public static void main(String[] args)throws IOException {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_happynumber obj = new lc_happynumber();
         int[] arr = {3, 6, 1, 5, 4};
         System.out.println(obj.isHappy(18));
     }

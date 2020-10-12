@@ -1,3 +1,5 @@
+package random;
+
 import java.io.*;
 import java.util.*;
 
@@ -5,19 +7,19 @@ public class FavoriteGenres {
 
 	public static void main(String[] args) throws IOException {
 
-		Map<String, List<String>> userSongs = new HashMap<>() {{
+		Map<String, List<String>> userSongs = new HashMap<String, List<String>>() {{
 
-			put("David", List.of("song1", "song2", "song3", "song4", "song8"));
-   			put("Emma", List.of("song5", "song6", "song7"));
+			put("David", Arrays.asList("song1", "song2", "song3", "song4", "song8"));
+   			put("Emma", Arrays.asList("song5", "song6", "song7"));
 		}};
 
-		Map<String, List<String>> songGenres = new HashMap<>() {{
+		Map<String, List<String>> songGenres = new HashMap<String, List<String>>() {{
 
-			put("Rock", List.of("song1", "song3"));
-   			put("Dubstep", List.of("song7"));
-   			put("Techno", List.of("song2", "song4"));
-   			put("Pop", List.of("song5", "song6"));
-   			put("Jazz", List.of("song8", "song9"));
+			put("Rock", Arrays.asList("song1", "song3"));
+   			put("Dubstep", Arrays.asList("song7"));
+   			put("Techno", Arrays.asList("song2", "song4"));
+   			put("Pop", Arrays.asList("song5", "song6"));
+   			put("Jazz", Arrays.asList("song8", "song9"));
 		}};
 
 		new FavoriteGenres().findGenres(userSongs, songGenres);

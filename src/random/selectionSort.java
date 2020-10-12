@@ -10,7 +10,7 @@ public class selectionSort {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        selectionSort obj = new selectionSort();
         int[] nums = {5,4,3,2,1};
         obj.selectionSort(nums);
     }

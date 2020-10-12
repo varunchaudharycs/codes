@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindromic-substrings/
+package leetcode;// https://leetcode.com/problems/palindromic-substrings/
 // TIME - O(n^3)
 
 //package leetcode;

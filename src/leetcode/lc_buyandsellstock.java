@@ -10,7 +10,7 @@ public class lc_buyandsellstock {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_buyandsellstock obj = new lc_buyandsellstock();
         int[] arr = {7,6,4,3,1};
         int ans = obj.maxProfit(arr);
 

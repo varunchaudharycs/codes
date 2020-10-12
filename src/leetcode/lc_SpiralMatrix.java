@@ -1,10 +1,8 @@
-// https://leetcode.com/problems/spiral-matrix/
-
+package leetcode;// https://leetcode.com/problems/spiral-matrix/
+import java.io.*;
+import java.util.*;
 class lc_SpiralMatrix {
-    
-    
-    
-    
+
     public static boolean isValid(int idx, int size) {
         
         return (idx >= 0 && idx < size);

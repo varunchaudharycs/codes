@@ -1,4 +1,4 @@
-// https://leetcode.com/contest/weekly-contest-185/problems/reformat-the-string/
+package leetcode;// https://leetcode.com/contest/weekly-contest-185/problems/reformat-the-string/
 // TIME - O(2n)
 
 //package random;

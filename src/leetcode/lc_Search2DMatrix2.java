@@ -1,3 +1,5 @@
+package leetcode;
+
 //https://leetcode.com/problems/search-a-2d-matrix-ii/
 class lc_Search2DMatrix2 {
     public boolean searchMatrix(int[][] matrix, int target) {

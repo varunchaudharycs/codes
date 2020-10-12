@@ -10,7 +10,7 @@ public class lc_sortcolors {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_sortcolors obj = new lc_sortcolors();
         obj.dutch_flag(new int[] {2,0,2,1,1,0});
     }
     // ONE-PASS

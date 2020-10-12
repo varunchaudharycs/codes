@@ -10,7 +10,7 @@ public class lc_groupanagrams {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_groupanagrams obj = new lc_groupanagrams();
 
         String[] arr = {"",""}; //{"eat", "tea", "tan", "ate", "nat", "bat"}; 
         

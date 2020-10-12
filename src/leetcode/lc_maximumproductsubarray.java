@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-product-subarray/
+package leetcode;// https://leetcode.com/problems/maximum-product-subarray/
 // TIME - O(n)
 
 //package leetcode;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/3sum/
+package leetcode;// https://leetcode.com/problems/3sum/
 // TIME - O(logn + n^2)
 
 //package leetcode;

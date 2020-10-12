@@ -1,4 +1,4 @@
-// Aim- GIVE ALPHABETICALLY SORTED TRANSACTIONS THAT CAN CONVERT PORTFOLIO TO BENCHMARK
+package random;// Aim- GIVE ALPHABETICALLY SORTED TRANSACTIONS THAT CAN CONVERT PORTFOLIO TO BENCHMARK
 
 import java.io.*;
 import java.util.*;
@@ -150,7 +150,7 @@ class PortfolioBenchmark {
 
 		System.out.println(changes);
 
-		Collections.sort(changes, new Comparator<>() {
+		Collections.sort(changes, new Comparator<List<String>>() {
 
 			public int compare(List<String> a, List<String> b) {
 

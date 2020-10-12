@@ -10,7 +10,7 @@ public class mergeSort {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        mergeSort obj = new mergeSort();
 
         int[] arr = {7,6,4,3,1};
         

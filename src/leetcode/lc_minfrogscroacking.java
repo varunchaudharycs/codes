@@ -27,14 +27,14 @@ public class lc_minfrogscroacking {
         if(len == 0) return frogs;
         frogs++;
 
-        HashMap<Character, Integer> croak = new HashMap<>() {{ // CHAR POSITION
+        HashMap<Character, Integer> croak = new HashMap<Character, Integer>() {{ // CHAR POSITION
             put('c', 1);
             put('r', 2);
             put('o', 3);
             put('a', 4);
             put('k', 5);
         }};
-        HashMap<Integer, Integer> stages = new HashMap<>() {{ // NUM OF FROGS AT EACH CHAR
+        HashMap<Integer, Integer> stages = new HashMap<Integer, Integer>() {{ // NUM OF FROGS AT EACH CHAR
             put(0, 1);
             put(1, 0);
             put(2, 0);

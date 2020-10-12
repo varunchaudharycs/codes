@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-bits/
+package leetcode;// https://leetcode.com/problems/reverse-bits/
 // TIME - O(n)
 
 //package leetcode;

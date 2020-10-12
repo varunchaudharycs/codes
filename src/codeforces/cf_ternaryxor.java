@@ -3,6 +3,7 @@
 package codeforces;
 import java.io.*;
 import java.util.*;
+import java.lang.*;
 
 public class cf_ternaryxor {
 
@@ -30,7 +31,8 @@ public class cf_ternaryxor {
                 }
                 else if(digitX == 1) {
                     
-                    a += (digitX + "0".repeat(n - i - 1));
+                    a += String.valueOf(digitX);
+                    for(int j = 0; j < n - i - 1; ++j) { a+= "0"; }
                     b += ("0" + x.substring(i + 1, n));
                     break;
                 }

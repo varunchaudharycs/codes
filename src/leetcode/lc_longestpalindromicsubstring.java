@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-palindromic-substring/
+package leetcode;// https://leetcode.com/problems/longest-palindromic-substring/
 // TIME - O(n^2)
 
 //package leetcode;

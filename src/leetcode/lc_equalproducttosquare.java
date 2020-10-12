@@ -1,4 +1,4 @@
-// https://leetcode.com/contest/weekly-contest-205/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/
+package leetcode;// https://leetcode.com/contest/weekly-contest-205/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/
 // TIME - O(n^2)
 
 //package leetcode;

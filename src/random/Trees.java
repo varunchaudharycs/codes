@@ -238,7 +238,7 @@ class Node
 
     public boolean inorder_iterative(Node root) {
 	
-	Stack<test> nodes = new Stack<>();
+	Stack<Node> nodes = new Stack<>();
 	Node curr = root;
 
 	while(!nodes.isEmpty() || curr != null) {
@@ -248,7 +248,7 @@ class Node
 			curr = curr.left;
 		}
 		curr = nodes.pop();
-		System.out.println("Inorder(iterative) - " + curr.val);
+		System.out.println("Inorder(iterative) - " + curr.data);
 		curr = curr.right;
 	}
 	return true;

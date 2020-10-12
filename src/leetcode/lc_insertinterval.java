@@ -1,11 +1,11 @@
 // https://leetcode.com/problems/insert-interval/
 // TIME - O(n)
 
-//package leetcode;
+package leetcode;
 import java.io.*;
 import java.util.*;
 
-public class lc_template {
+public class lc_insertinterval {
 
 	// put intrvals in order
 	// 1. non-overlapping on left as it is

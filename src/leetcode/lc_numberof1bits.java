@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-1-bits/
+package leetcode;// https://leetcode.com/problems/number-of-1-bits/
 // TIME - O(k), k - #1 bits
 
 //package leetcode;

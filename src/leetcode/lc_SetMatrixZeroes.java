@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/set-matrix-zeroes/
+package leetcode;// https://leetcode.com/problems/set-matrix-zeroes/
 
 class lc_SetMatrixZeroes {
     public void setZeroes(int[][] matrix) {

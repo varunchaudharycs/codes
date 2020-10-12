@@ -10,7 +10,7 @@ public class insertionSort {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        insertionSort obj = new insertionSort();
 
         int[] arr = {12,11,-13,-5,6,-7,5,-3,-6}; // [-13 -5 -7 -3 -6 12 11 6 5]
         

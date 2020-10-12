@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-repeating-character-replacement/
+package leetcode;// https://leetcode.com/problems/longest-repeating-character-replacement/
 // TIME - O(n)
 
 //package leetcode;

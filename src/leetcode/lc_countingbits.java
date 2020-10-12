@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/counting-bits/
+package leetcode;// https://leetcode.com/problems/counting-bits/
 // TIME - O(n)
 
 //package leetcode;
@@ -16,12 +16,9 @@ public class lc_countingbits {
 			String inp;
 			StringTokenizer st;
 			int[] arr;
-			int n;
 
-			System.out.println("Enter array");
-			inp = buf.readLine();
-			st = new StringTokenizer(inp);
-			for(int i = 0; st.hasNext(); ++i) arr[i] = Integer.parseInt(st.nextToken());
+			System.out.println("Enter num");
+			int n  = Integer.parseInt(buf.readLine());
 
 			countBits(n);
 		}

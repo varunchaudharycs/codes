@@ -35,7 +35,7 @@ class lc_displayorders {
      
         for(Integer tableNum : tables) {
             String table = tableNum.toString();
-            List<String> tableOrder = new ArrayList<>(){{
+            List<String> tableOrder = new ArrayList<String>(){{
                 add(table);
             }};
 

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sum-of-two-integers/
+package leetcode;// https://leetcode.com/problems/sum-of-two-integers/
 // TIME - O(n)
 
 //package leetcode;

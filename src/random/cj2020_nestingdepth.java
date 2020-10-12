@@ -28,15 +28,18 @@ public class cj2020_nestingdepth {
                     ans += digit;
                 }
                 else if(needed > 0) {
-                    ans += "(".repeat(needed) + digit;
+                    for(int j = 0; j < Math.abs(needed); ++j) ans += "(";
+                    ans += digit;
                     open += needed;                 
                 }
                 else {
-                    ans += ")".repeat(Math.abs(needed)) + digit;
+                    for(int j = 0; j < Math.abs(needed); ++j) ans += ")";
+                    ans += digit;
                     open -= Math.abs(needed);                       
                 }
             }
-            if(open > 0) ans += ")".repeat(open);
+            if(open > 0)
+                for(int j = 0; j < open; ++j) ans += ")";
            
             System.out.println("Case #" + test + ": " + ans);
         }

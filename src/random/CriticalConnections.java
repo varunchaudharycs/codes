@@ -1,3 +1,5 @@
+package random;
+
 import java.io.*;
 import java.util.*;
 
@@ -19,18 +21,18 @@ class CriticalConnections {
         // OUTPUT - []
 
         int n = 9;
-        List<List<Integer>> connections = new ArrayList<>() {{
+        List<List<Integer>> connections = new ArrayList<List<Integer>>() {{
 
-            add(List.of(1, 2));
-            add(List.of(1, 3));
-            add(List.of(2, 3));
-            add(List.of(3, 4));
-            add(List.of(3, 6));
-            add(List.of(4, 5));
-            add(List.of(6, 7));
-            add(List.of(6, 9));
-            add(List.of(7, 8));
-            add(List.of(8, 9));
+            add(Arrays.asList(1, 2));
+            add(Arrays.asList(1, 3));
+            add(Arrays.asList(2, 3));
+            add(Arrays.asList(3, 4));
+            add(Arrays.asList(3, 6));
+            add(Arrays.asList(4, 5));
+            add(Arrays.asList(6, 7));
+            add(Arrays.asList(6, 9));
+            add(Arrays.asList(7, 8));
+            add(Arrays.asList(8, 9));
         }};
 
         Set<Integer> servers = new HashSet<>();
@@ -90,7 +92,7 @@ class CriticalConnections {
 
             if(visited.size() != numOfServers){
 
-                    if(x > y) { list.add(new ArrayList<>(List.of(x, y))); }
+                    if(x > y) { list.add(new ArrayList<>(Arrays.asList(x, y))); }
                     else { list.add(connection); }
             }
 

@@ -1,4 +1,4 @@
-// https://leetcode.com/contest/weekly-contest-191/problems/maximum-product-of-two-elements-in-an-array/
+package leetcode;// https://leetcode.com/contest/weekly-contest-191/problems/maximum-product-of-two-elements-in-an-array/
 // TIME - O(n logn)
 
 //package leetcode;

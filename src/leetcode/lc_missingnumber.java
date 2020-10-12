@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/missing-number/
+package leetcode;// https://leetcode.com/problems/missing-number/
 // TIME - O(n)
 
 //package leetcode;
@@ -17,18 +17,20 @@ public class lc_missingnumber {
 			StringTokenizer st;
 			int[] arr;
 			int n;
-
+			System.out.println("Enter size");
+			n = Integer.parseInt(buf.readLine());
+			arr = new int[n];
 			System.out.println("Enter array");
 			inp = buf.readLine();
 			st = new StringTokenizer(inp);
-			for(int i = 0; st.hasNext(); ++i) arr[i] = Integer.parseInt(st.nextToken());
+			for(int i = 0; st.hasMoreTokens(); ++i) arr[i] = Integer.parseInt(st.nextToken());
 
-			findMissingNumber(n);
+			findMissingNumber(arr);
 		}
 	}
 
 	// Logic - Sort num. Index and value must be same at all places. Use XOR to find
-	public static int[] findMissingNumber(int nums) {
+	public static int findMissingNumber(int[] nums) {
 
 		int len = nums.length;
 		Arrays.sort(nums);

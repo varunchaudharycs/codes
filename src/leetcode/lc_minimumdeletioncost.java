@@ -1,4 +1,4 @@
-// https://leetcode.com/contest/weekly-contest-205/problems/minimum-deletion-cost-to-avoid-repeating-letters/
+package leetcode;// https://leetcode.com/contest/weekly-contest-205/problems/minimum-deletion-cost-to-avoid-repeating-letters/
 // TIME - O(n)
 
 //package leetcode;

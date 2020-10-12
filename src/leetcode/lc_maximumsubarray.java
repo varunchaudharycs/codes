@@ -10,7 +10,7 @@ public class lc_maximumsubarray {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_maximumsubarray obj = new lc_maximumsubarray();
         //int[] arr = {-2,1,-3,4,-1,2,1,-5,4};
         int[] arr = {-1};
         int sum = obj.maxSubArray(arr);

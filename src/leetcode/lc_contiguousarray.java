@@ -33,7 +33,7 @@ class lc_contiguousarray {
 
         int count = 0;
         int maxL = 0;
-        HashMap<Integer, Integer> count_idx = new HashMap<>(){{ // DEFAULT COUNT = 0 START
+        HashMap<Integer, Integer> count_idx = new HashMap<Integer, Integer>(){{ // DEFAULT COUNT = 0 START
             put(0, -1);
         }};
         for(int i = 0; i < nums.length; i++) {

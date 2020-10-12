@@ -10,7 +10,7 @@ public class quickSort {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        quickSort obj = new quickSort();
 
         int[] arr = {10, 16, 8, 12, 15, 6, 3, 9, 5};
 

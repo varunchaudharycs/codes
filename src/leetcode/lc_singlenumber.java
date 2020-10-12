@@ -10,7 +10,7 @@ public class lc_singlenumber {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_singlenumber obj = new lc_singlenumber();
         int[] arr = {2,0,2,1,1,0,3};
         System.out.println(obj.singleNumber(arr));
     }

@@ -1,13 +1,13 @@
-// problem link
-// TIME - O()
+package codeforces;// https://codeforces.com/contest/1430/problem/A
+// TIME - O(windows)
 
 //package leetcode;
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class cf_numberofapartments {
 
-	private static Set<Integer> sizes = new HashSet<>() {{
+	private static Set<Integer> sizes = new HashSet<Integer>() {{
 		add(3);
 		add(5);
 		add(7);
@@ -27,7 +27,7 @@ public class Solution {
 		}
 	}
 
-	// Logic
+	// LOGIC- coin change problem.
 	public static void printCombination(int windows) {
 
 		Integer[] dp = new Integer[windows+1];

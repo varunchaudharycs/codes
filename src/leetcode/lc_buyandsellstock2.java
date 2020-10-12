@@ -10,7 +10,7 @@ public class lc_buyandsellstock2 {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_buyandsellstock2 obj = new lc_buyandsellstock2();
 
         int[] arr = {7,6,4,3,1}; // [-13 -5 -7 -3 -6 12 11 6 5]
         

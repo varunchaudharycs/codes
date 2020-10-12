@@ -1,16 +1,15 @@
-// link
+package codeforces;// link
 // TIME - O()
 
 //package codeforces;
 import java.io.*;
 import java.util.*;
 
-public class cf_template {
+public class Solution2 {
 	
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
-
 
 		int testCases = Integer.parseInt(buf.readLine());
 
@@ -32,7 +31,7 @@ public class cf_template {
 				arr[i] = Integer.parseInt(st.nextToken());
 			}
 
-			System.out.println(getWinner(arr, n));
+			System.out.println(getAnswer(arr, n));
 
 		}
 

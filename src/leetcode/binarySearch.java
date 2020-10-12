@@ -1,4 +1,4 @@
-// BINARY SEARCH
+package leetcode;// BINARY SEARCH
 // TIME - O(logn)
 
 import java.io.*;
@@ -10,7 +10,7 @@ public class binarySearch {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        binarySearch obj = new binarySearch();
         int[] arr = {1,5,6,3,2,7,9};
         System.out.println("Index: " + obj.binarySearch(arr, 7));
     }

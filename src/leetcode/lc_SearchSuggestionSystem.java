@@ -1,3 +1,9 @@
+package leetcode;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 //https://leetcode.com/problems/search-suggestions-system/
 class lc_SearchSuggestionSystem {
     

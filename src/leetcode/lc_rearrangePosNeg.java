@@ -10,7 +10,7 @@ public class lc_rearrangePosNeg {
 
         BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
-        Solution obj = new Solution();
+        lc_rearrangePosNeg obj = new lc_rearrangePosNeg();
 
         int[] arr = {12,11,-13,-5,6,-7,5,-3,-6}; // [-13 -5 -7 -3 -6 12 11 6 5]
         
@@ -58,18 +58,18 @@ public class lc_rearrangePosNeg {
     
     // TIME - O(n^2)
     // REARRANGE ALL (-)ve ON LEFT & (+)ve ON RIGHT
-//     public void rearrange(int[] arr) {
+     public void rearrange(int[] arr) {
 
-//         int posIdx = 0;
-//         for(int i = 0; i < arr.length; i++) {
+         int posIdx = 0;
+         for(int i = 0; i < arr.length; i++) {
 
-//             if(arr[i] < 0) { // FIND -ve
-//                 int tmp = arr[i];
-//                 for(int j = i; j > posIdx; j--) arr[j] = arr[j-1]; // SHIFT +ves to RIGHT by 1
-//                 arr[posIdx] = tmp; // PUT -ve in RIGHT POS
-//                 posIdx++;
-//             }
-//         }
+             if(arr[i] < 0) { // FIND -ve
+                 int tmp = arr[i];
+                 for(int j = i; j > posIdx; j--) arr[j] = arr[j-1]; // SHIFT +ves to RIGHT by 1
+                 arr[posIdx] = tmp; // PUT -ve in RIGHT POS
+                 posIdx++;
+             }
+         }
 
-//     }
+     }
 }

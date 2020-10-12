@@ -1,4 +1,4 @@
-// CHECKERS - O's play, can only go up, needs a blank spot after removing X- get's additional chance.
+package random;// CHECKERS - O's play, can only go up, needs a blank spot after removing X- get's additional chance.
 // Find - Maximum number of X that can be cut in a single chance for O
 // TIME - O(N)
 
@@ -15,7 +15,7 @@ class wf_checkersmaxpawns {
 		String[] inp2 = {"X....", ".X...", "..O..", "...X.", "....."};
 		String[] inp3 = {"..........", "..........", "..........", "..........", ".....X....", "..........", ".X...X....", "..........", "...X.X....", "....O....."};
 
-		wf_checksmaxpawns obj = new wf_checksmaxpawns();
+		wf_checkersmaxpawns obj = new wf_checkersmaxpawns();
 		System.out.println(obj.findPosAndResult(inp0));
 		System.out.println(obj.findPosAndResult(inp1));
 		System.out.println(obj.findPosAndResult(inp2));
@@ -35,7 +35,7 @@ class wf_checkersmaxpawns {
 				break;
 			}
 		}
-		wf_checksmaxpawns obj = new wf_checksmaxpawns();
+		wf_checkersmaxpawns obj = new wf_checkersmaxpawns();
 		return obj.findMaxPawns(board, row, col, 0);
 	}
 

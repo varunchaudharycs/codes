@@ -1,3 +1,5 @@
+package random;
+
 import java.io.*;
 import java.util.*;
 import java.lang.*;
@@ -32,7 +34,7 @@ public class TwoSumUniquePairs {
 
 			int rem = target - num;
 
-			if(uniqueNums.contains(rem) && !visited.contains(numsUsedInPair)) {
+			if(uniqueNums.contains(rem) && !numsUsedInPair.contains(numsUsedInPair)) {
 
 				count++;
 				numsUsedInPair.add(rem);

@@ -1,4 +1,4 @@
-// initial public offering
+package random;// initial public offering
 // TIME - O()
 
 //package leetcode;
@@ -12,11 +12,11 @@ public class citadel_ipo {
 		BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
 
 		
-		List<List<Integer>> bids = new ArrayList<>(){{
-			add(new ArrayList<Integer>(List.of(1,5,5,0))); 
-			add(new ArrayList<Integer>(List.of(2,7,8,1)));
-			add(new ArrayList<Integer>(List.of(3,7,5,1)));
-			add(new ArrayList<Integer>(List.of(4,10,3,3)));
+		List<List<Integer>> bids = new ArrayList<List<Integer>>(){{
+			add(new ArrayList<Integer>(Arrays.asList(1,5,5,0)));
+			add(new ArrayList<Integer>(Arrays.asList(2,7,8,1)));
+			add(new ArrayList<Integer>(Arrays.asList(3,7,5,1)));
+			add(new ArrayList<Integer>(Arrays.asList(4,10,3,3)));
 		}};
 
 		//System.out.println(bids);

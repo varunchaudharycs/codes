@@ -1,11 +1,11 @@
-// https://codeforces.com/contest/1430/problem/B
+package codeforces;// https://codeforces.com/contest/1430/problem/B
 // TIME - O(n logn)
 
 import java.io.*;
 import java.util.*;
 
 
-public class Solution {
+public class cf_barrels {
 
 	public static void main(String[] args) throws IOException {
 
